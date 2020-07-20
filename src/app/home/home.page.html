@@ -1,0 +1,57 @@
+<ion-content>
+  <div id="container">
+    <div id="loading" *ngIf="isLoading == true">loading</div>
+    <div>
+      <ion-img [src]="logo"></ion-img>
+      <div id="success" *ngIf="isActivated === true">
+        <h6>This App has been activated for {{trial}} days!</h6>
+      </div>
+      <div id="fail" *ngIf="isFailed === true">
+        <h6>You have entered invalid code!</h6>
+      </div>
+      <div id="expired" *ngIf="licenceStatus == 'expired'">
+        <h3>Licence has been expired!</h3>
+      </div>
+      <div id="progress" *ngIf="isActivating === true">
+        <h6>Validating...</h6>
+        <p>Please ensure you have internet connection</p>
+      </div>
+      <br />
+      <ion-button
+        (click)="continue()"
+        expand="full"
+        class="primary"
+        *ngIf="isActivated === true"
+      >
+        Continue
+      </ion-button>
+      <ion-input
+        type="text"
+        placeholder="Activation Code"
+        [(ngModel)]="code"
+        *ngIf="isActivated === false"
+      ></ion-input>
+      <ion-button
+        (click)="activate()"
+        expand="full"
+        class="primary"
+        *ngIf="isActivated === false"
+      >
+        Activate
+      </ion-button>
+      <ion-button
+        (click)="continueTrial()"
+        expand="full"
+        fill="clear"
+        class="secondary"
+        [disabled]="trial <= 0"
+        *ngIf="isActivated === false"
+      >
+        <div>
+          Continue Trial<br />
+          <span>{{trial}} days left</span>
+        </div>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

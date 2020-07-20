@@ -1,0 +1,7 @@
+{
+  "name": "rhythmstix",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

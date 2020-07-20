@@ -1,0 +1,127 @@
+<ion-content>
+  <div id="title" *ngIf="onMenu == true || onMenuForce == true">
+    <div (click)="back()">
+      <img
+        src="../../assets/assets/icons/ic_arrow_back_48px.svg"
+        alt=""
+        width="30"
+      />
+    </div>
+    <span>
+      {{title}}
+    </span>
+    <div></div>
+  </div>
+  <div id="page" (click)="displayControl()" [ngStyle]="pageBackground">
+    <div *ngIf="isHideLyrics == true" class="no-lyrics">
+      Lyrics off
+    </div>
+    <div id="lyrics" *ngIf="isHideLyrics == false">
+      <div id="section">{{section}}</div>
+      <div id="singer">{{singer}}</div>
+      <span
+        *ngFor="let lyric of displayedLyrics"
+        [innerHTML]="lyric.value"
+        [ngStyle]="{'display': lyric.value == '<br>' ? 'block' : 'inline-block', 'height': lyric.value == '<br>' ? '3vh' : ''}"
+        [ngClass]="lyric.class"
+      ></span>
+    </div>
+  </div>
+  <div id="controller" *ngIf="onMenu == true || onMenuForce == true">
+    <div class="slider">
+      <span>{{progressDuration}}</span>
+      <ion-range
+        color="primary"
+        mode="ios"
+        [(ngModel)]="progress"
+        (ionChange)="goToSection($event)"
+      ></ion-range>
+      <span>{{totalDuration}}</span>
+    </div>
+    <div class="button">
+      <div id="prev" (click)="unmuteVocal()" *ngIf="isMute == true">
+        <img
+          src="../../assets/assets/icons/ic_mic_off_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+      <div id="prev" (click)="muteVocal()" *ngIf="isMute == false">
+        <img
+          src="../../assets/assets/icons/ic_mic_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+      <div id="prev" (click)="reStart()">
+        <img
+          src="../../assets/assets/icons/ic_fast_rewind_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+
+      <div id="prev" (click)="prevSection()">
+        <img
+          src="../../assets/assets/icons/ic_skip_previous_48px.svg"
+          alt=""
+          width="40"
+          [ngStyle]="{'opacity': slideState == 'first' ? '0.5' : '1'}"
+        />
+      </div>
+      <div id="play" *ngIf="isPlaying == false" (click)="playSong()">
+        <img
+          src="../../assets/assets/icons/ic_play_arrow_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+      <div id="pause" *ngIf="isPlaying == true" (click)="pauseSong()">
+        <img
+          src="../../assets/assets/icons/ic_pause_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+
+      <div id="prev" (click)="nextSection()">
+        <img
+          src="../../assets/assets/icons/ic_skip_next_48px.svg"
+          alt=""
+          width="40"
+          [ngStyle]="{'opacity': slideState == 'first' ? '0.5' : '1'}"
+        />
+      </div>
+      <div id="next" (click)="stopSong()">
+        <img
+          src="../../assets/assets/icons/ic_stop_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+
+      <div
+        id="prev"
+        (click)="isHideLyrics = true"
+        *ngIf="isHideLyrics == false"
+      >
+        <img
+          src="../../assets/assets/icons/ic_speaker_notes_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+      <div
+        id="prev"
+        (click)="isHideLyrics = false"
+        *ngIf="isHideLyrics == true"
+      >
+        <img
+          src="../../assets/assets/icons/ic_speaker_notes_off_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+    </div>
+  </div>
+</ion-content>

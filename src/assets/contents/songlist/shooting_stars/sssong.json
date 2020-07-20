@@ -1,0 +1,162 @@
+{
+    "data" : {
+        "title":"An Angel In Training",
+        "duration":"04:12",
+        "backsong":"backsong.mp3",
+        "vocal":"vocal.mp3",
+        "pdf":"Angel_In_Training.pdf",
+        "backgroundImage":"slide.png",
+        "backgroundColor":"#aef0ed",
+        "alignment":"left"
+    },
+"lyrics" : {
+        "00:00.00" : {
+            "section" : "Instrumental",
+            "singer" : "",
+            "lyrics" : {
+                "00:08.00" : ".",
+                "00:10.00" : " .",
+                "00:12.00" : " ."
+            }
+        },
+        "00:14.30" : {
+            "section" : "Verse 1",
+            "singer" : "",
+            "lyrics" : {
+                "00:16.00" : "Stars so bright.",
+                "00:18.00" : "<br>",
+                "00:19.20" : "Make me think of what I can be.",
+                "00:21.00" : "<br>",
+                "00:24.00" : "Why is it so hard.",
+                "00:25.00" : "<br>",
+                "00:27.85" : "To be an angel in the first degree?"
+            }
+        },
+        "00:33.30" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "00:34.00" : "Stars so bright.",
+                "00:36.00" : "<br>",
+                "00:38.00" : "Make us think of what you can achieve.",
+                "00:40.00" : "<br>",
+                "00:43.00" : "There isn’t long to wait.",
+                "00:45.00" : "<br>",
+                "00:47.00" : "Just be patient and you will see."
+            }
+        },
+        "00:52.50" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "00:53.00" : "These tasks you’ve given me.",
+                "00:56.00" : "<br>",
+                "00:57.73" : "All these books to read.",
+                "01:01.50" : "<br>",
+                "01:02.47" : "It just seems endless.",
+                "01:05.50" : "<br>",
+                "01:07.00" : "I don’t want to be in training any more."
+            }
+        },
+            "01:14.00" : {
+            "section" : "",
+            "singer" : "",
+            "lyrics" : {
+            "01:10.00" : ""
+            }
+        },
+        "01:20.00" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "01:22.00" : "Stars so bright.",
+                "01:25.00" : "<br>",
+                "01:26.00" : "Showing me what my future could be.",
+                "01:29.00" : "<br>",
+                "01:30.00" : "I fail every time. ",
+                "01:33.00" : "<br>",
+                "01:35.02" : "When will it be my time -  my time to shine?"
+            }
+        },
+        "01:41.00" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "01:41.52" : "Don’t give up.",
+                "01:44.50" : "<br>",
+                "01:45.72" : "You’re so very close to your goal.",
+                "01:48.50" : "<br>",
+                "01:50.00" : "Keep on working hard.",
+                "01:52.50" : "<br>",
+                "01:54.00" : "You’ll be an angel if you just believe."
+
+            }
+        },
+        "01:58:00" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "02:00.00" : "I’m sick of hearing this.",
+                "02:03.00" : "<br>",
+                "02:04.00" : "We work late each night.",
+                "02:09.00" : "<br>",
+                "02:10.00" : "This is just crazy",
+                "02:12.50" : "<br>",
+                "02:14.00" : "I don’t want to be in training any more."
+
+            }
+        },
+        "02:28.00" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "02:30.00" : "Stars so bright.",
+                "02:31.50" : "<br>",
+                "02:33.00" : "Give me a glimmer of hope.",
+                "02:37.00" : "<br>",
+                "02:38.00" : "Some help here would be nice.",
+                "02:40.50" : "<br>",
+                "02:42.00" : "A little luck would see me through."
+            }
+        },
+        "02:49.00" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "02:49.12" : "Stop just listen",
+                "02:51.00" : "<br>",
+                "02:52.72" : "We were in your place lo-ng ago.",
+                "02:55.50" : "<br>",
+                "02:57.00" : "Hold on and just be strong.",
+                "03:00.00" : "<br>",
+                "03:01.00" : "Something special, is in store for you."
+            }
+        },
+        "03:06.00" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "03:07.00" : "These tasks we’ve given you.",
+                "00:44.50" : "<br>",
+                "03:12.00" : "All the books you’ve read.",
+                "03:15.50" : "<br>",
+                "03:17.00" : "It may seem endless.",
+                "03:19.00" : "<br>",
+                "03:20.00" : "I promise it will be worth it in the end."
+            }
+        },
+        "03:35.00" : {
+            "section" : "Chorus",
+            "singer" : "",
+            "lyrics" : {
+                "03:36.00" : "Stars so bright.",
+                "03:39.00" : "<br>",
+                "03:39.50" : "Make me think of what I can be.",
+                "03:43.00" : "<br>",
+                "03:45.36" : "Why is it so hard?",
+                "03:47.50" : "<br>",
+                "03:49.00" : "To be an angel in the first degree."
+            }
+        }
+    }
+}

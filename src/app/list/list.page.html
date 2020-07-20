@@ -1,0 +1,19 @@
+<ion-content>
+  <!-- <div id="loading" *ngIf="isLoading == true">loading</div> -->
+  <div id="graphic" [ngStyle]="graphicStyle"></div>
+  <div id="page">
+    <div id="appname" [ngStyle]="appNameStyle">{{appName}}</div>
+    <div id="slogan" [ngStyle]="sloganStyle">{{slogan}}</div>
+    <div id="list">
+      <ion-list>
+        <ion-item
+          lines="none"
+          *ngFor="let song of songList"
+          (click)="openPage(song.url, song.type)"
+        >
+          <ion-label [ngStyle]="listStyle">{{song.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

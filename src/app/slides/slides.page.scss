@@ -1,0 +1,126 @@
+@import "../../global.scss";
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+ion-range {
+  .range-bar {
+    color: rgba($color: #ffffff, $alpha: 0.5) !important;
+  }
+}
+.content-image {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.content-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 20px;
+}
+.content-html {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  overflow: auto;
+}
+.content-video {
+  width: 100%;
+  height: 100%;
+  video {
+    width: 100%;
+    height: 100%;
+  }
+}
+.title {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px;
+  background: rgba(0, 0, 0, 0.8);
+  height: 50px;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  color: white;
+  span {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+}
+.controller {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 100px;
+  z-index: 999;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  .slider {
+    display: flex;
+    height: 40px;
+    padding: 0px 30px;
+    // background: rgba(0, 0, 0, 0.8);
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+    }
+    ion-range {
+      height: 100%;
+    }
+  }
+  .button {
+    display: flex;
+    justify-content: space-evenly;
+    // background: rgba(0, 0, 0, 0.8);
+    padding: 0px 30px;
+    height: 60px;
+    padding-bottom: 15px;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 50px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .title {
+    padding: 0px 10px;
+  }
+  .controller {
+    .slider {
+      padding: 0px 10px;
+    }
+    .button {
+      padding: 0px 10px;
+    }
+  }
+}

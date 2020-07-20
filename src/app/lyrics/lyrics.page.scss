@@ -1,0 +1,185 @@
+@import "../../global.scss";
+#page {
+  height: 100%;
+  padding: 30px;
+  background-size: cover;
+}
+ion-range {
+  .range-bar {
+    color: rgba($color: #ffffff, $alpha: 0.5) !important;
+  }
+}
+#title {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px;
+  background: rgba(0, 0, 0, 0.8);
+  height: 50px;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  color: white;
+  span {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+}
+#controller {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 100px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  .slider {
+    display: flex;
+    height: 40px;
+    padding: 0px 30px;
+    // background: rgba(0, 0, 0, 0.8);
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+    }
+    ion-range {
+      height: 100%;
+    }
+  }
+  .button {
+    display: flex;
+    justify-content: space-evenly;
+    // background: rgba(0, 0, 0, 0.8);
+    padding: 0px 30px;
+    height: 60px;
+    padding-bottom: 15px;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 50px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+}
+#lyrics {
+  font-size: 6.5vh;
+  font-weight: 600;
+  height: 100%;
+  overflow: auto;
+  span {
+    display: inline-block;
+    color: black;
+  }
+  .active {
+    color: red;
+  }
+  .inactive {
+    color: grey;
+  }
+}
+.no-lyrics {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+#section,
+#singer {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+// @media only screen and (max-width: 400px) {
+//   #page {
+//     padding: 80px 20px 120px 20px;
+//   }
+//   #title {
+//     padding: 0px 10px;
+//     background: rgba(0, 0, 0, 1);
+//   }
+//   #controller {
+//     height: 120px;
+
+//     .slider {
+//       height: 50px;
+//       padding: 0px 10px;
+//       background: rgba(0, 0, 0, 1);
+//     }
+//     .button {
+//       height: 70px;
+//       padding: 0px 10px;
+//       background: rgba(0, 0, 0, 1);
+//     }
+//   }
+// }
+@media only screen and (max-width: 480px) {
+  #page {
+    padding: 70px 20px 100px 20px;
+  }
+  #lyrics {
+    font-size: 3vh;
+  }
+
+  #title {
+    padding: 0px 10px;
+  }
+  #controller {
+    height: 120px;
+    .slider {
+      height: 50px;
+      padding: 0px 10px;
+    }
+    .button {
+      height: 70px;
+      padding: 0px 10px;
+    }
+  }
+}
+@media only screen and (min-height: 600px) {
+  @media only screen and (min-width: 600px) {
+    #page {
+      padding: 80px 20px 120px 20px;
+    }
+    #title {
+      padding: 0px 10px;
+    }
+    #lyrics {
+      font-size: 4vh;
+    }
+    #section,
+    #singer {
+      font-size: 28px;
+    }
+    #controller {
+      height: 120px;
+      .slider {
+        height: 50px;
+        padding: 0px 10px;
+      }
+      .button {
+        height: 70px;
+        padding: 0px 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "data": {
+    "title": "Shooting Stars",
+    "duration": "02:50",
+    "backsong": "backsong.mp3",
+    "vocal": "vocal.mp3",
+    "pdf": "Shooting Stars.pdf",
+    "backgroundImage": "background.jpg",
+    "backgroundColor": "",
+    "alignment": "center"
+  },
+  "lyrics": {
+    "00:00.00": {
+      "section": "Introduction",
+      "singer": "",
+      "lyrics": {
+        "00:06.00": "1  ",
+        "00:07.00": " 2  ",
+        "00:08.00": "  3  "
+      }
+    },
+    "00:10.00": {
+      "section": "Verse 1",
+      "singer": "All",
+      "lyrics": {
+        "00:10.00": "We like to dash around,",
+        "00:13.00": "<br>",
+        "00:15.00": "Finding all the news.",
+        "00:18.00": "<br>",
+        "00:20.00": "We know what's going on,",
+        "00:23.00": "<br>",
+        "00:24.00": "We're the brightest stars around!"
+      }
+    },
+    "00:30.00": {
+      "section": "Instrumental",
+      "singer": "",
+      "lyrics": {
+        "00:30.00": ""
+      }
+    },
+    "00:35.30": {
+      "section": "Chorus",
+      "singer": "",
+      "lyrics": {
+        "00:35.30": "Shine down to the ground,",
+        "00:37.00": "<br>",
+        "00:37.50": "We shine all around.",
+        "00:39.50": "<br>",
+        "00:40.00": "Shine to the left, then to the right,",
+        "00:42.30": "<br>",
+        "00:42.80": "Shining all around.",
+        "00:45.00": "<br>"
+      }
+    },
+    "00:44.30": {
+      "section": "Chorus",
+      "singer": "",
+      "lyrics": {
+        "00:45.00": "Shine down to the ground,",
+        "00:47.00": "<br>",
+        "00:47.50": "We shine all around.",
+        "00:49.50": "<br>",
+        "00:50.00": "Shine to the left, then to the right,",
+        "00:52.30": "<br>",
+        "00:52.80": "Shining all around.",
+        "00:54.50": "<br>"
+      }
+    },
+    "00:55.00": {
+      "section": "Instrumental",
+      "singer": "",
+      "lyrics": {
+        "01:25.00": ""
+      }
+    },
+    "01:06.00": {
+      "section": "Verse 1",
+      "singer": "",
+      "lyrics": {
+        "01:06.09": "If your lost and scared,",
+        "01:09.00": "<br>",
+        "01:10.55": "We will show you the way.",
+        "01:13.00": "<br>",
+        "01:15.00": "We will shine our light for you,",
+        "01:19.00": "<br>",
+        "01:19.50": "We’re the brightest stars around.",
+        "01:24.00": "<br>"
+      }
+    },
+    "01:25.00": {
+      "section": "Instrumental",
+      "singer": "",
+      "lyrics": {
+        "01:25.00": ""
+      }
+    },
+    "01:30.50": {
+      "section": "Chorus",
+      "singer": "",
+      "lyrics": {
+        "01:31.00": "Shine down to the ground,",
+        "01:32.50": "<br>",
+        "01:33.00": "We shine all around.",
+        "01:35.00": "<br>",
+        "01:35.50": "Shine to the left, then to the right,",
+        "01:38.00": "<br>",
+        "01:38.50": "Shining all around,",
+        "01:40.00": "<br>"
+      }
+    },
+    "01:40.50": {
+      "section": "Chorus",
+      "singer": "",
+      "lyrics": {
+        "01:41.00": "Shine down to the ground,",
+        "01:42.50": "<br>",
+        "01:43.00": "We shine all around.",
+        "01:45.00": "<br>",
+        "01:46.00": "Shine to the left, then to the right,",
+        "01:48.00": "<br>",
+        "01:48.50": "Shining all around.",
+        "01:50.00": "<br>"
+      }
+    },
+    "01:51.30": {
+      "section": "Instrumental",
+      "singer": "",
+      "lyrics": {
+        "01:51.30": ""
+      }
+    },
+    "02:00.30": {
+      "section": "Chorus",
+      "singer": "",
+      "lyrics": {
+        "02:01.00": "We’ll look through space and time,",
+        "02:05.50": "<br>",
+        "02:06.00": "To help you find the truth.",
+        "02:10.50": "<br>",
+        "02:11.00": "There’s no problem we can’t fix,",
+        "02:14.50": "<br>",
+        "02:15.00": "We’re the brightest stars around!",
+        "02:21.00": "<br>"
+      }
+    },
+    "02:21.00": {
+      "section": "Chorus",
+      "singer": "",
+      "lyrics": {
+        "02:26.30": "Shine down to the ground,",
+        "02:28.20": "<br>",
+        "02:28.30": "We shine all around.",
+        "02:30.30": "<br>",
+        "02:31.20": "Shine to the left, then to the right,",
+        "02:33.30": "<br>",
+        "02:34.30": "Shining all around.",
+        "02:35.30": "<br>"
+      }
+    },
+    "02:35.30": {
+      "section": "",
+      "singer": "",
+      "lyrics": {
+        "02:36.00": ""
+      }
+    },
+    "02:36.00": {
+      "section": "Chorus",
+      "singer": "",
+      "lyrics": {
+        "02:36.30": "Shine down to the ground,",
+        "02:38.20": "<br>",
+        "02:38.30": "We shine all around.",
+        "02:40.30": "<br>",
+        "02:41.20": "Shine to the left, then to the right,",
+        "02:43.30": "<br>",
+        "02:44.20": "Shining all around.",
+        "02:45.30": "<br>"
+      }
+    }
+  }
+}
