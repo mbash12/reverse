@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
-import { NavController } from "@ionic/angular";
+import { NavController, Platform } from "@ionic/angular";
 
 @Component({
   selector: "app-slides",
@@ -34,8 +34,14 @@ export class SlidesPage implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
-    private navCtrl: NavController
-  ) {}
+    private navCtrl: NavController,
+    private platform: Platform
+  ) {
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.pauseSlide();
+      this.navCtrl.back();
+    });
+  }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get("folder");

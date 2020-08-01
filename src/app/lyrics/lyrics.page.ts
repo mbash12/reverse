@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { NavController, DomController } from "@ionic/angular";
+import { Platform } from "@ionic/angular";
 
 @Component({
   selector: "app-lyrics",
@@ -44,8 +45,14 @@ export class LyricsPage implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
-    private navCtrl: NavController
-  ) {}
+    private navCtrl: NavController,
+    private platform: Platform
+  ) {
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.stopSong();
+      this.navCtrl.back();
+    });
+  }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get("folder");

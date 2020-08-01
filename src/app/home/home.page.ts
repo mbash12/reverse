@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
   styleUrls: ["home.page.scss"],
 })
 export class HomePage {
-  private appName = "uk.co.rhythmstix.guidetheway";
+  private appName = "uk.co.rhythmstix.bandlabbegin";
   private logo = "../../assets/assets/logo.png";
   private isActivating = false;
   private isActivated = false;
@@ -59,6 +59,9 @@ export class HomePage {
     });
   }
   private activate() {
+    this.isActivated = false;
+    this.isFailed = false;
+    this.licenceStatus = "none";
     this.isActivating = true;
     let url = "https://rhythmstix.co.uk/licences/check.php";
     let httpHeaders = new HttpHeaders().set(
@@ -92,6 +95,10 @@ export class HomePage {
         } else {
           dac = new Date();
           dex = new Date(dac.setDate(dac.getDate() + ddu));
+        }
+        if (ddu <= 0) {
+          this.isFailed = true;
+          return;
         }
         this.trial = ddu;
         encrypted = window.btoa(
