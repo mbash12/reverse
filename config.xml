@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="uk.co.rhythmstix.bandlabbegin" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Re-Verse - Bandlab For Beginner</name>
+    <name>Re-View - BandLab For Beginner</name>
     <description>Lyrics and lesson viewer</description>
     <author email="hi@ionicframework.com" href="http://ionicframework.com/">Rhythmstix Team</author>
     <content src="index.html" />

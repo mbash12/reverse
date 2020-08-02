@@ -9,23 +9,39 @@
       />
     </div>
     <span>{{folder}}</span>
-    <div></div>
+    <div (click)="viewPdf()">
+      <img
+        src="../../assets/assets/icons/ic_picture_as_pdf_48px.svg"
+        alt=""
+        width="30"
+      />
+    </div>
   </div>
-  <div class="content" (click)="displayControl()">
+  <div class="content" (click)="displayControl()" (swipe)="handleSwipe($event)">
     <div
       *ngIf="currentSlideContent?.type == 'image'"
       class="content-image"
       [ngStyle]="{'background-image': 'url('+folderPath+currentSlideContent?.content+')'}"
+      (swipe)="handleSwipe($event)"
     ></div>
-    <div class="content-text" *ngIf="currentSlideContent?.type == 'text'">
+    <div
+      class="content-text"
+      *ngIf="currentSlideContent?.type == 'text'"
+      (swipe)="handleSwipe($event)"
+    >
       {{currentSlideContent?.content}}
     </div>
     <div
       class="content-html"
       *ngIf="currentSlideContent?.type == 'html'"
       [innerHTML]="currentSlideContent?.content"
+      (swipe)="handleSwipe($event)"
     ></div>
-    <div class="content-video" *ngIf="currentSlideContent?.type == 'video'">
+    <div
+      class="content-video"
+      *ngIf="currentSlideContent?.type == 'video'"
+      (swipe)="handleSwipe($event)"
+    >
       <video
         [src]="folderPath+currentSlideContent?.content"
         autoplay

@@ -3,6 +3,10 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { NavController, DomController } from "@ionic/angular";
 import { Platform } from "@ionic/angular";
+import {
+  DocumentViewer,
+  DocumentViewerOptions,
+} from "@ionic-native/document-viewer/ngx";
 
 @Component({
   selector: "app-lyrics",
@@ -11,6 +15,7 @@ import { Platform } from "@ionic/angular";
 })
 export class LyricsPage implements OnInit {
   private folder: string;
+  private pdf;
   private folderPath: string;
   private slideData: any;
   private slideCount: any;
@@ -46,7 +51,8 @@ export class LyricsPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
     private navCtrl: NavController,
-    private platform: Platform
+    private platform: Platform,
+    private document: DocumentViewer
   ) {
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.stopSong();
@@ -57,6 +63,26 @@ export class LyricsPage implements OnInit {
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get("folder");
     this.getData(this.folder);
+  }
+  figureOutFile(file: string) {
+    if (this.platform.is("ios")) {
+      const baseUrl = location.href.replace("/index.html", "");
+      return baseUrl + `${file}`;
+    }
+    if (this.platform.is("android")) {
+      return `file:///android_asset/www${file}`;
+    }
+  }
+  viewPdf() {
+    this.pauseSong();
+    const options: DocumentViewerOptions = {
+      title: this.folder,
+    };
+    this.document.viewDocument(
+      this.figureOutFile(this.pdf),
+      "application/pdf",
+      options
+    );
   }
   getData(folder) {
     let settingData;
@@ -72,6 +98,7 @@ export class LyricsPage implements OnInit {
       folderData = data;
       this.lyrics = folderData.lyrics;
       this.slideData = folderData.data;
+      this.pdf = this.folderPath + this.slideData.pdf;
       this.title = this.slideData.title;
       this.backSong = new Audio();
       this.backSong.src = this.folderPath + this.slideData.backsong;

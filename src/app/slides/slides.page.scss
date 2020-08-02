@@ -47,7 +47,7 @@ ion-range {
   align-items: center;
   padding: 0px 30px;
   background: rgba(0, 0, 0, 0.8);
-  height: 50px;
+  height: 40px;
   width: 100%;
   top: 0px;
   left: 0px;
@@ -73,7 +73,7 @@ ion-range {
   position: fixed;
   bottom: 0px;
   width: 100%;
-  height: 100px;
+  height: 90px;
   z-index: 999;
   color: white;
   background: rgba(0, 0, 0, 0.8);
@@ -97,13 +97,13 @@ ion-range {
     justify-content: space-evenly;
     // background: rgba(0, 0, 0, 0.8);
     padding: 0px 30px;
-    height: 60px;
+    height: 50px;
     padding-bottom: 15px;
     div {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 50px;
+      height: 40px;
       width: 50px;
       img {
         width: 30px;

@@ -2,6 +2,11 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { NavController, Platform } from "@ionic/angular";
+import { Gesture, GestureController } from "@ionic/angular";
+import {
+  DocumentViewer,
+  DocumentViewerOptions,
+} from "@ionic-native/document-viewer/ngx";
 
 @Component({
   selector: "app-slides",
@@ -10,8 +15,10 @@ import { NavController, Platform } from "@ionic/angular";
 })
 export class SlidesPage implements OnInit {
   @ViewChild("vidContent") myVideo: ElementRef;
+  // @ViewChild("content") myContent: ElementRef;
   private slideState;
   private folder;
+  private pdf;
   private voiceOver;
   private slideData;
   private slideCount;
@@ -30,22 +37,71 @@ export class SlidesPage implements OnInit {
   private onMenu = false;
   private totalDuration;
   private progressDuration;
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
     private navCtrl: NavController,
-    private platform: Platform
+    private platform: Platform,
+    private gestureCtrl: GestureController,
+    private document: DocumentViewer
   ) {
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.pauseSlide();
       this.navCtrl.back();
     });
   }
-
+  figureOutFile(file: string) {
+    if (this.platform.is("ios")) {
+      const baseUrl = location.href.replace("/index.html", "");
+      return baseUrl + `${file}`;
+    }
+    if (this.platform.is("android")) {
+      return `file:///android_asset/www${file}`;
+    }
+  }
+  viewPdf() {
+    this.pauseSlide();
+    const options: DocumentViewerOptions = {
+      title: this.folder,
+    };
+    this.document.viewDocument(
+      this.figureOutFile(this.pdf),
+      "application/pdf",
+      options
+    );
+  }
   ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get("folder");
-    this.getData(this.folder);
+    setTimeout(() => {
+      this.folder = this.activatedRoute.snapshot.paramMap.get("folder");
+      this.getData(this.folder);
+      // const gesture: Gesture = this.gestureCtrl.create({
+      //   el: this.myContent.nativeElement,
+      //   threshold: 15,
+      //   gestureName: "my-gesture",
+      //   onEnd: (ev) => this.swipe(ev),
+      // });
+      // gesture.enable();
+    }, 1000);
+  }
+  // private swipe(detail) {
+  //   console.log(detail);
+  //   this.displayControl();
+  //   if (detail.deltaX >= 50) {
+  //     this.prevSlide();
+  //   }
+  //   if (detail.deltaX <= -50) {
+  //     this.nextSlide();
+  //   }
+  // }
+  handleSwipe(e) {
+    if (e.deltaX >= 50) {
+      this.prevSlide();
+    }
+    if (e.deltaX <= -50) {
+      this.nextSlide();
+    }
   }
   getData(folder) {
     this.folderPath = "/assets/contents/songlist/" + folder + "/";
@@ -53,6 +109,7 @@ export class SlidesPage implements OnInit {
     this.httpClient.get(this.folderPath + "slides.json").subscribe((data) => {
       folderData = data;
       this.slideData = folderData.data;
+      this.pdf = this.folderPath + this.slideData.pdf;
       this.slideCount = this.slideData.slides.length;
       this.currentSlide = 0;
       this.loadContent();

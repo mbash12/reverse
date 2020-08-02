@@ -10,7 +10,13 @@
     <span>
       {{title}}
     </span>
-    <div></div>
+    <div (click)="viewPdf()">
+      <img
+        src="../../assets/assets/icons/ic_picture_as_pdf_48px.svg"
+        alt=""
+        width="30"
+      />
+    </div>
   </div>
   <div id="page" (click)="displayControl()" [ngStyle]="pageBackground">
     <div *ngIf="isHideLyrics == true" class="no-lyrics">
