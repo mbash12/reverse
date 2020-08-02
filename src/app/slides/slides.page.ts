@@ -7,6 +7,7 @@ import {
   DocumentViewer,
   DocumentViewerOptions,
 } from "@ionic-native/document-viewer/ngx";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 @Component({
   selector: "app-slides",
@@ -15,7 +16,8 @@ import {
 })
 export class SlidesPage implements OnInit {
   @ViewChild("vidContent") myVideo: ElementRef;
-  // @ViewChild("content") myContent: ElementRef;
+  @ViewChild("content") myContent: ElementRef;
+  private vidUrl: SafeResourceUrl;
   private slideState;
   private folder;
   private pdf;
@@ -37,6 +39,8 @@ export class SlidesPage implements OnInit {
   private onMenu = false;
   private totalDuration;
   private progressDuration;
+  private lastOnStart: number = 0;
+  private DOUBLE_CLICK_THRESHOLD: number = 300;
 
   constructor(
     private router: Router,
@@ -45,7 +49,8 @@ export class SlidesPage implements OnInit {
     private navCtrl: NavController,
     private platform: Platform,
     private gestureCtrl: GestureController,
-    private document: DocumentViewer
+    private document: DocumentViewer,
+    private domSanitizer: DomSanitizer
   ) {
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.pauseSlide();
@@ -76,25 +81,46 @@ export class SlidesPage implements OnInit {
     setTimeout(() => {
       this.folder = this.activatedRoute.snapshot.paramMap.get("folder");
       this.getData(this.folder);
-      // const gesture: Gesture = this.gestureCtrl.create({
+      // const gesture = this.gestureCtrl.create({
       //   el: this.myContent.nativeElement,
-      //   threshold: 15,
       //   gestureName: "my-gesture",
-      //   onEnd: (ev) => this.swipe(ev),
+      //   threshold: 0,
+      //   onStart: () => {
+      //     this.dblClick();
+      //   },
       // });
       // gesture.enable();
     }, 1000);
   }
-  // private swipe(detail) {
-  //   console.log(detail);
-  //   this.displayControl();
-  //   if (detail.deltaX >= 50) {
-  //     this.prevSlide();
-  //   }
-  //   if (detail.deltaX <= -50) {
-  //     this.nextSlide();
-  //   }
-  // }
+  dblClick() {
+    const now = Date.now();
+    // console.log(Math.abs(now - this.lastOnStart), this.DOUBLE_CLICK_THRESHOLD);
+    if (Math.abs(now - this.lastOnStart) <= this.DOUBLE_CLICK_THRESHOLD) {
+      if (this.isPlaying == false) {
+        this.playSlide();
+      } else {
+        this.pauseSlide();
+      }
+      this.lastOnStart = 0;
+    } else {
+      this.lastOnStart = now;
+    }
+    setTimeout(() => {
+      console.log(now - this.lastOnStart);
+      if (now - this.lastOnStart == 0) {
+        this.displayControl();
+      }
+    }, this.DOUBLE_CLICK_THRESHOLD);
+  }
+  check() {
+    console.log("a");
+  }
+  openYT(url) {
+    window.open(url, "_system");
+  }
+  handleTap(e) {
+    this.dblClick();
+  }
   handleSwipe(e) {
     if (e.deltaX >= 50) {
       this.prevSlide();
@@ -157,6 +183,13 @@ export class SlidesPage implements OnInit {
     } else {
       this.pauseSlide();
       this.isPlaying = false;
+    }
+    if (this.currentSlideContent.type == "youtube") {
+      this.vidUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(
+        this.currentSlideContent.content
+      );
+    } else {
+      this.vidUrl = undefined;
     }
   }
   goToSection(e) {

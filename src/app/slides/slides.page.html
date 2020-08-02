@@ -17,7 +17,12 @@
       />
     </div>
   </div>
-  <div class="content" (click)="displayControl()" (swipe)="handleSwipe($event)">
+  <div
+    class="content"
+    (swipe)="handleSwipe($event)"
+    (tap)="handleTap($event)"
+    #content
+  >
     <div
       *ngIf="currentSlideContent?.type == 'image'"
       class="content-image"
@@ -47,6 +52,26 @@
         autoplay
         #vidContent
       ></video>
+    </div>
+    <div
+      class="content-youtube"
+      *ngIf="currentSlideContent?.type == 'youtube'"
+      (swipe)="handleSwipe($event)"
+      (tap)="handleTap($event)"
+    >
+      <div class="showmenu" (click)="displayControl()">
+        <img
+          src="../../assets/assets/icons/ic_library_books_48px.svg"
+          alt=""
+          width="30"
+        />
+      </div>
+      <iframe
+        [src]="vidUrl"
+        #vidContent
+        (swipe)="handleSwipe($event)"
+        (tap)="handleTap($event)"
+      ></iframe>
     </div>
   </div>
   <div class="controller" *ngIf="onMenu == true">

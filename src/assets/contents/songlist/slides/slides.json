@@ -4,6 +4,13 @@
     "pdf": "Shooting Stars.pdf",
     "slides": [
       {
+        "type": "youtube",
+        "content": "https://www.youtube.com/embed/QxbF-tXyLd4?autoplay=1",
+        "voiceover": "",
+        "background-color": "red",
+        "duration": "00:00"
+      },
+      {
         "type": "text",
         "content": "Getting started – for teachers – how to create logins for their children.",
         "voiceover": "hello there.mp3",
@@ -25,13 +32,6 @@
         "duration": "00:30"
       },
 
-      {
-        "type": "youtube",
-        "content": "https://www.youtube.com/embed/QxbF-tXyLd4?autoplay=1",
-        "voiceover": "",
-        "background-color": "red",
-        "duration": "00:10"
-      },
       {
         "type": "text",
         "content": "",
