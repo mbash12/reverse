@@ -14,45 +14,45 @@ import {
   styleUrls: ["./lyrics.page.scss"],
 })
 export class LyricsPage implements OnInit {
-  private folder: string;
-  private pdf;
-  private folderPath: string;
-  private slideData: any;
-  private slideCount: any;
-  private currentSlide: number;
-  private backSong;
-  private vocal;
-  private duration;
-  private interval;
-  private onMenu = true;
-  private onMenuForce;
-  private isPlaying = false;
-  private isMute = false;
-  private isHideLyrics = false;
-  private progressDuration;
-  private progress;
-  private totalDuration;
-  private pageBackground;
-  private lyricFont;
-  private currentTimeStamp;
+  public folder: string;
+  public pdf;
+  public folderPath: string;
+  public slideData: any;
+  public slideCount: any;
+  public currentSlide: number;
+  public backSong;
+  public vocal;
+  public duration;
+  public interval;
+  public onMenu = true;
+  public onMenuForce;
+  public isPlaying = false;
+  public isMute = false;
+  public isHideLyrics = false;
+  public progressDuration;
+  public progress;
+  public totalDuration;
+  public pageBackground;
+  public lyricFont;
+  public currentTimeStamp;
 
-  private title;
-  private section;
-  private singer;
-  private lyrics;
-  private currentLyrics;
-  private highlightedLyrics;
+  public title;
+  public section;
+  public singer;
+  public lyrics;
+  public currentLyrics;
+  public highlightedLyrics;
 
-  private currentTime;
-  private displayedLyrics;
-  private intervalControl;
+  public currentTime;
+  public displayedLyrics;
+  public intervalControl;
   constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private httpClient: HttpClient,
-    private navCtrl: NavController,
-    private platform: Platform,
-    private document: DocumentViewer
+    public router: Router,
+    public activatedRoute: ActivatedRoute,
+    public httpClient: HttpClient,
+    public navCtrl: NavController,
+    public platform: Platform,
+    public document: DocumentViewer
   ) {
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.stopSong();

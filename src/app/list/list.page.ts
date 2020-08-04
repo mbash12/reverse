@@ -8,19 +8,19 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./list.page.scss"],
 })
 export class ListPage implements OnInit {
-  private isLoading = true;
-  private appName;
-  private slogan;
-  private isTrial;
-  private graphicStyle;
-  private appNameStyle;
-  private sloganStyle;
-  private listStyle;
-  private songList;
+  public isLoading = true;
+  public appName;
+  public slogan;
+  public isTrial;
+  public graphicStyle;
+  public appNameStyle;
+  public sloganStyle;
+  public listStyle;
+  public songList;
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private httpClient: HttpClient
+    public route: ActivatedRoute,
+    public router: Router,
+    public httpClient: HttpClient
   ) {
     this.route.queryParams.subscribe((params) => {
       if (this.router.getCurrentNavigation().extras.state) {
@@ -33,7 +33,7 @@ export class ListPage implements OnInit {
   ngOnInit() {
     this.isLoading = false;
   }
-  private getSetting(isTrial) {
+  public getSetting(isTrial) {
     let settingPath = "../../assets/contents/settings/settings.json";
     if (isTrial == true) {
       settingPath = "../../assets/contents/settings/trial.json";
@@ -81,7 +81,7 @@ export class ListPage implements OnInit {
         });
     });
   }
-  private openPage(url, type) {
+  public openPage(url, type) {
     this.router.navigateByUrl(type + "/" + url);
   }
 }

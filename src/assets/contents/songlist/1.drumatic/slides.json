@@ -1,135 +1,142 @@
 {
-    "data": {
-        "title":"",
-        "pdf":"media/l1plan.pdf",
-        "autoplay":true,
-        "slides":[
-            {
-                "type":"image",
-                "duration":"00:05",
-                "content":"media/colourlogo.gif",
-                "voiceover":"media/intro.mp3",
-                "background-color":"black"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"coreslides/fstp.png",
-                "voiceover":"",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"coreslides/lo.png",
-                "voiceover":"",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"coreslides/lp.png",
-                "voiceover":"",
-                "background-color":"white"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/1.png",
-                "voiceover":"",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/2.png",
-                "voiceover":"",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/3.png",
-                "voiceover":"",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/4.png",
-                "voiceover":"",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/5.png",
-                "voiceover":"",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/6.png",
-                "voiceover":"",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/7.png",
-                "voiceover":"",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/8.png",
-                "voiceover":"",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/9.png",
-                "voiceover":"",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/10.png",
-                "voiceover":"",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/11.png",
-                "voiceover":"",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/12.png",
-                "voiceover":"",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/13.png",
-                "voiceover":"",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"",
-                "content":"drummachine/14.png",
-                "voiceover":"",
-                "background-color":"#004aad"
-            }
-        ]
-    }
+  "data": {
+    "title": "",
+    "pdf": "media/l1plan.pdf",
+    "autoplay": true,
+    "slides": [
+      {
+        "type": "image",
+        "duration": "00:05",
+        "content": "../sharedcontents/colourlogo.gif",
+        "voiceover": "media/intro.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:05",
+        "content": "media/colourlogo.gif",
+        "voiceover": "media/intro.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "coreslides/fstp.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "coreslides/lo.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "coreslides/lp.png",
+        "voiceover": "",
+        "background-color": "white"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/1.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/2.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/3.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/4.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/5.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/6.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/7.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/8.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/9.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/10.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/11.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/12.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/13.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/14.png",
+        "voiceover": "",
+        "background-color": "#004aad"
+      }
+    ]
+  }
 }

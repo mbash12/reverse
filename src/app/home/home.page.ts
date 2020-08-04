@@ -9,24 +9,24 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
   styleUrls: ["home.page.scss"],
 })
 export class HomePage {
-  private appName = "uk.co.rhythmstix.bandlabbegin";
-  private logo = "../../assets/assets/logo.png";
-  private isActivating = false;
-  private isActivated = false;
-  private isFailed = false;
-  private isTrial = false;
-  private trial = 0;
-  private code = "";
-  private licenceStatus = "none";
-  private isLoading = true;
+  public appName = "uk.co.rhythmstix.bandlabbegin";
+  public logo = "../../assets/assets/logo.png";
+  public isActivating = false;
+  public isActivated = false;
+  public isFailed = false;
+  public isTrial = false;
+  public trial = 0;
+  public code = "";
+  public licenceStatus = "none";
+  public isLoading = true;
   constructor(
-    private router: Router,
-    private storage: Storage,
-    private httpClient: HttpClient
+    public router: Router,
+    public storage: Storage,
+    public httpClient: HttpClient
   ) {
     this.checkActivation();
   }
-  private checkActivation() {
+  public checkActivation() {
     this.storage.get("licence").then((data) => {
       this.isLoading = false;
       if (data == null) {
@@ -58,7 +58,7 @@ export class HomePage {
       }
     });
   }
-  private activate() {
+  public activate() {
     this.isActivated = false;
     this.isFailed = false;
     this.licenceStatus = "none";
@@ -109,7 +109,7 @@ export class HomePage {
       }
     });
   }
-  private continue() {
+  public continue() {
     let navigationExtras: NavigationExtras = {
       state: {
         trial: this.isTrial,
@@ -117,7 +117,7 @@ export class HomePage {
     };
     this.router.navigate(["list"], navigationExtras);
   }
-  private continueTrial() {
+  public continueTrial() {
     let navigationExtras: NavigationExtras = {
       state: {
         trial: this.isTrial,

@@ -17,40 +17,40 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 export class SlidesPage implements OnInit {
   @ViewChild("vidContent") myVideo: ElementRef;
   @ViewChild("content") myContent: ElementRef;
-  private vidUrl: SafeResourceUrl;
-  private slideState;
-  private folder;
-  private pdf;
-  private voiceOver;
-  private slideData;
-  private slideCount;
-  private currentSlide;
-  private currentSlideContent;
-  private currentSlideDuration;
-  private currentTime = 0;
-  private progress;
-  private isPlaying;
-  private audioPlaying = false;
-  private hasVoiceOver;
-  private hasVideo;
-  private interval;
-  private intervalControl;
-  private folderPath;
-  private onMenu = false;
-  private totalDuration;
-  private progressDuration;
-  private lastOnStart: number = 0;
-  private DOUBLE_CLICK_THRESHOLD: number = 300;
+  public vidUrl: SafeResourceUrl;
+  public slideState;
+  public folder;
+  public pdf;
+  public voiceOver;
+  public slideData;
+  public slideCount;
+  public currentSlide;
+  public currentSlideContent;
+  public currentSlideDuration;
+  public currentTime = 0;
+  public progress;
+  public isPlaying;
+  public audioPlaying = false;
+  public hasVoiceOver;
+  public hasVideo;
+  public interval;
+  public intervalControl;
+  public folderPath;
+  public onMenu = false;
+  public totalDuration;
+  public progressDuration;
+  public lastOnStart: number = 0;
+  public DOUBLE_CLICK_THRESHOLD: number = 300;
 
   constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private httpClient: HttpClient,
-    private navCtrl: NavController,
-    private platform: Platform,
-    private gestureCtrl: GestureController,
-    private document: DocumentViewer,
-    private domSanitizer: DomSanitizer
+    public router: Router,
+    public activatedRoute: ActivatedRoute,
+    public httpClient: HttpClient,
+    public navCtrl: NavController,
+    public platform: Platform,
+    public gestureCtrl: GestureController,
+    public document: DocumentViewer,
+    public domSanitizer: DomSanitizer
   ) {
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.pauseSlide();
