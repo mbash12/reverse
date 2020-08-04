@@ -1,21 +1,21 @@
 <ion-content>
   <!-- <ion-img [src]="folderPath+currentSlideContent?.content"></ion-img> -->
   <div class="title" *ngIf="onMenu == true">
-    <div (click)="back()">
+    <!-- <div (click)="back()">
       <img
         src="../../assets/assets/icons/ic_arrow_back_48px.svg"
         alt=""
         width="30"
       />
-    </div>
+    </div> -->
     <span>{{folder}}</span>
-    <div (click)="viewPdf()">
+    <!-- <div (click)="viewPdf()">
       <img
         src="../../assets/assets/icons/ic_picture_as_pdf_48px.svg"
         alt=""
         width="30"
       />
-    </div>
+    </div> -->
   </div>
   <div
     class="content"
@@ -75,7 +75,7 @@
     </div>
   </div>
   <div class="controller" *ngIf="onMenu == true">
-    <div class="slider">
+    <div class="slider" *ngIf="currentSlideContent.duration != 0">
       <span>{{progressDuration}}</span>
       <ion-range
         color="primary"
@@ -86,6 +86,13 @@
       <span>{{totalDuration}}</span>
     </div>
     <div class="button">
+      <div id="home" (click)="back()">
+        <img
+          src="../../assets/assets/icons/ic_home_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
       <div id="prev" (click)="prevSlide()">
         <img
           src="../../assets/assets/icons/ic_skip_previous_48px.svg"
@@ -114,6 +121,13 @@
           alt=""
           width="40"
           [ngStyle]="{'opacity': slideState == 'last' ? '0.5' : '1'}"
+        />
+      </div>
+      <div id="pdf" (click)="viewPdf()">
+        <img
+          src="../../assets/assets/icons/ic_picture_as_pdf_48px.svg"
+          alt=""
+          width="40"
         />
       </div>
     </div>
