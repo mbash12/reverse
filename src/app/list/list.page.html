@@ -1,6 +1,21 @@
 <ion-content>
   <!-- <div id="loading" *ngIf="isLoading == true">loading</div> -->
-  <div id="graphic" [ngStyle]="graphicStyle"></div>
+  <video
+    autoplay
+    muted
+    loop
+    id="video"
+    playsinline
+    webkit-playsinline
+    *ngIf="videoBackground !== null"
+  >
+    <source [src]="videoBackground" type="video/mp4" />
+  </video>
+  <div
+    id="graphic"
+    *ngIf="graphicBackground !== null"
+    [ngStyle]="graphicStyle"
+  ></div>
   <div id="page">
     <div id="appname" [ngStyle]="appNameStyle">{{appName}}</div>
     <div id="slogan" [ngStyle]="sloganStyle">{{slogan}}</div>

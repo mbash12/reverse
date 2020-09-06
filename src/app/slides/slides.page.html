@@ -19,9 +19,9 @@
   </div>
   <div
     class="content"
-    (swipe)="handleSwipe($event)"
     (tap)="handleTap($event)"
     #content
+    [ngStyle]="{'background': currentSlideContent?.backgroundColor}"
   >
     <div
       *ngIf="currentSlideContent?.type == 'image'"
@@ -39,9 +39,15 @@
     <div
       class="content-html"
       *ngIf="currentSlideContent?.type == 'html'"
-      [innerHTML]="currentSlideContent?.content"
+      [innerHTML]="domSanitizer.bypassSecurityTrustHtml(currentSlideContent?.content)"
       (swipe)="handleSwipe($event)"
     ></div>
+    <iframe
+      class="content-html"
+      *ngIf="currentSlideContent?.type == 'iframe'"
+      [src]="domSanitizer.bypassSecurityTrustResourceUrl(currentSlideContent?.content)"
+      (swipe)="handleSwipe($event)"
+    ></iframe>
     <div
       class="content-video"
       *ngIf="currentSlideContent?.type == 'video'"
@@ -126,6 +132,13 @@
       <div id="pdf" (click)="viewPdf()">
         <img
           src="../../assets/assets/icons/ic_picture_as_pdf_48px.svg"
+          alt=""
+          width="40"
+        />
+      </div>
+      <div id="video" (click)="viewVideo()">
+        <img
+          src="../../assets/assets/icons/ic_ondemand_video_48px.svg"
           alt=""
           width="40"
         />

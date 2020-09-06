@@ -8,7 +8,7 @@ import {
   DocumentViewerOptions,
 } from "@ionic-native/document-viewer/ngx";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
-
+import { take } from "rxjs/operators";
 @Component({
   selector: "app-slides",
   templateUrl: "./slides.page.html",
@@ -41,6 +41,7 @@ export class SlidesPage implements OnInit {
   public progressDuration;
   public lastOnStart: number = 0;
   public DOUBLE_CLICK_THRESHOLD: number = 300;
+  videoDemo: string;
 
   constructor(
     public router: Router,
@@ -54,7 +55,9 @@ export class SlidesPage implements OnInit {
   ) {
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.pauseSlide();
-      this.navCtrl.back();
+      // this.navCtrl.back();
+
+      this.navCtrl.navigateBack("/list");
     });
   }
   figureOutFile(file: string) {
@@ -77,6 +80,12 @@ export class SlidesPage implements OnInit {
       options
     );
   }
+  viewVideo() {
+    this.pauseSlide();
+    this.router.navigateByUrl("/video/" + encodeURIComponent(this.videoDemo));
+    // let x = encodeURIComponent(this.videoDemo);
+    // console.log(x);
+  }
   ngOnInit() {
     setTimeout(() => {
       this.folder = this.activatedRoute.snapshot.paramMap.get("folder");
@@ -94,7 +103,6 @@ export class SlidesPage implements OnInit {
   }
   dblClick() {
     const now = Date.now();
-    // console.log(Math.abs(now - this.lastOnStart), this.DOUBLE_CLICK_THRESHOLD);
     if (Math.abs(now - this.lastOnStart) <= this.DOUBLE_CLICK_THRESHOLD) {
       if (this.isPlaying == false) {
         this.playSlide();
@@ -106,15 +114,12 @@ export class SlidesPage implements OnInit {
       this.lastOnStart = now;
     }
     setTimeout(() => {
-      console.log(now - this.lastOnStart);
       if (now - this.lastOnStart == 0) {
         this.displayControl();
       }
     }, this.DOUBLE_CLICK_THRESHOLD);
   }
-  check() {
-    console.log("a");
-  }
+
   openYT(url) {
     window.open(url, "_system");
   }
@@ -132,19 +137,24 @@ export class SlidesPage implements OnInit {
   getData(folder) {
     this.folderPath = "/assets/contents/songlist/" + folder + "/";
     let folderData;
-    this.httpClient.get(this.folderPath + "slides.json").subscribe((data) => {
-      folderData = data;
-      this.slideData = folderData.data;
-      this.pdf = this.folderPath + this.slideData.pdf;
-      this.slideCount = this.slideData.slides.length;
-      this.currentSlide = 0;
-      this.loadContent();
-      this.displayControl();
-    });
+    this.httpClient
+      .get(this.folderPath + "slides.json")
+      .pipe(take(1))
+      .subscribe((data) => {
+        folderData = data;
+        this.slideData = folderData.data;
+        this.pdf = this.folderPath + this.slideData.pdf;
+        this.videoDemo = this.folderPath + this.slideData.video;
+        this.slideCount = this.slideData.slides.length;
+        this.currentSlide = 0;
+        this.loadContent();
+        this.displayControl();
+      });
   }
   back() {
     this.pauseSlide();
-    this.navCtrl.back();
+    // this.navCtrl.back();
+    this.navCtrl.navigateBack("/list");
   }
 
   loadContent() {
@@ -271,20 +281,17 @@ export class SlidesPage implements OnInit {
   }
   prevSlide() {
     if (this.currentSlide > 0) {
+      this.pauseAudio();
       clearTimeout(this.interval);
       this.currentSlide = this.currentSlide - 1;
-      this.pauseAudio();
       this.loadContent();
     }
   }
   nextSlide() {
     if (this.currentSlide < this.slideCount - 1) {
-      clearTimeout(this.interval);
-      if (this.hasVoiceOver == true) {
-        this.voiceOver.pause();
-      }
-      this.currentSlide = this.currentSlide + 1;
       this.pauseAudio();
+      clearTimeout(this.interval);
+      this.currentSlide = this.currentSlide + 1;
       this.loadContent();
     }
   }

@@ -56,7 +56,9 @@ export class LyricsPage implements OnInit {
   ) {
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.stopSong();
-      this.navCtrl.back();
+      // this.navCtrl.back();
+
+      this.navCtrl.navigateBack("/list");
     });
   }
 
@@ -224,7 +226,9 @@ export class LyricsPage implements OnInit {
   }
   back() {
     this.stopSong();
-    this.navCtrl.back();
+    // this.navCtrl.back();
+
+    this.navCtrl.navigateBack("/list");
   }
   playSong() {
     this.backSong.play();
