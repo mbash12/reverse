@@ -1,0 +1,143 @@
+{
+  "data": {
+    "title": "",
+    "pdf": "media/l1plan.pdf",
+    "video": "media/beethoven.mp4",
+    "autoplay": true,
+    "slides": [
+      {
+        "type": "image",
+        "duration": "00:05",
+        "content": "../sharedcontents/colourlogo.gif",
+        "voiceover": "media/intro.mp3",
+        "backgroundColor": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:05",
+        "content": "media/colourlogo.gif",
+        "voiceover": "media/intro.mp3",
+        "backgroundColor": "black"
+      },
+      {
+        "type": "iframe",
+        "duration": "",
+        "content": "https://rhythmstix.co.uk/community/blfb/",
+        "voiceover": "",
+        "backgroundColor": "white"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "coreslides/lo.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "coreslides/lp.png",
+        "voiceover": "",
+        "backgroundColor": "white"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/1.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/2.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/3.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/4.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/5.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/6.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/7.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/8.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/9.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/10.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/11.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/12.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/13.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "drummachine/14.png",
+        "voiceover": "",
+        "backgroundColor": "#004aad"
+      }
+    ]
+  }
+}
