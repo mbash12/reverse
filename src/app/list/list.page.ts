@@ -32,7 +32,7 @@ export class ListPage implements OnInit {
   ) {
     this.platform.ready().then(() => {
       this.nativeAudio
-        .preloadSimple("uniqueId1", "assets/audio/click.mp3")
+        .preloadSimple("uniqueId1", "assets/audio/multimedia_button_click_015.mp3")
         .then(
           (success) => {
             // console.log("success");
